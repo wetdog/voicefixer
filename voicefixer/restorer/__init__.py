@@ -14,12 +14,11 @@ import os
 import torch
 import urllib.request
 
+RESTORER_PATH = "/gpfs/scratch/bsc88/bsc88416/voicefixer/model_checkpoints/vf.ckpt"
+
 meta = {
     "voicefixer_fe": {
-        "path": os.path.join(
-            os.path.expanduser("~"),
-            ".cache/voicefixer/analysis_module/checkpoints/vf.ckpt",
-        ),
+        "path": RESTORER_PATH,
         "url": "https://zenodo.org/record/5600188/files/vf.ckpt?download=1",
     },
 }
