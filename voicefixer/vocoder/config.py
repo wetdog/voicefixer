@@ -3,15 +3,13 @@ import numpy as np
 import os
 from voicefixer.tools.path import root_path
 
+VOCODER_PATH = "/gpfs/scratch/bsc88/bsc88416/voicefixer/model_checkpoints/model.ckpt-1490000_trimed.pt"
 
 class Config:
     @classmethod
     def refresh(cls, sr):
         if sr == 44100:
-            Config.ckpt = os.path.join(
-                os.path.expanduser("~"),
-                ".cache/voicefixer/synthesis_module/44100/model.ckpt-1490000_trimed.pt",
-            )
+            Config.ckpt = VOCODER_PATH
             Config.cond_channels = 512
             Config.m_channels = 768
             Config.resstack_depth = [8, 8, 8, 8]
@@ -30,10 +28,7 @@ class Config:
                 "Error: Vocoder currently only support 44100 samplerate."
             )
 
-    ckpt = os.path.join(
-        os.path.expanduser("~"),
-        ".cache/voicefixer/synthesis_module/44100/model.ckpt-1490000_trimed.pt",
-    )
+    ckpt = VOCODER_PATH
     m_channels = 384
     bits = 10
     opt = "Ralamb"
