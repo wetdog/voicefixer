@@ -91,7 +91,6 @@ if __name__ == "__main__":
         default=False,
         action="store_true",
     )
-
     args = parser.parse_args()
 
     if torch.cuda.is_available() and not args.disable_cuda:
