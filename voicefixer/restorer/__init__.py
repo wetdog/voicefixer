@@ -15,6 +15,8 @@ import torch
 import urllib.request
 
 RESTORER_PATH = "/gpfs/scratch/bsc88/bsc88416/voicefixer/model_checkpoints/vf.ckpt"
+#RESTORER_PATH = "/home/jgiraldo/projects/voicefixer-amd/base_models/vf.ckpt"
+
 
 meta = {
     "voicefixer_fe": {

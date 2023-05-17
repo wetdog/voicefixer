@@ -14,6 +14,7 @@ import os
 from voicefixer.vocoder.config import Config
 import urllib.request
 
+print(os.path.exists(Config.ckpt))
 if not os.path.exists(Config.ckpt):
     os.makedirs(os.path.dirname(Config.ckpt), exist_ok=True)
     print("Downloading the weight of neural vocoder: TFGAN")

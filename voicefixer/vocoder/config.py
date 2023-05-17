@@ -4,6 +4,7 @@ import os
 from voicefixer.tools.path import root_path
 
 VOCODER_PATH = "/gpfs/scratch/bsc88/bsc88416/voicefixer/model_checkpoints/model.ckpt-1490000_trimed.pt"
+#VOCODER_PATH = "/home/jgiraldo/projects/voicefixer-amd/base_models/model.ckpt-1490000_trimed.pt"
 
 class Config:
     @classmethod

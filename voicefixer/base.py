@@ -6,16 +6,15 @@ import os
 
 EPS = 1e-8
 
+RESTORER_PATH = "/gpfs/scratch/bsc88/bsc88416/voicefixer/model_checkpoints/vf.ckpt"
+#RESTORER_PATH = "/home/jgiraldo/projects/voicefixer-amd/base_models/vf.ckpt"
 
 class VoiceFixer(nn.Module):
     def __init__(self):
         super(VoiceFixer, self).__init__()
         self._model = voicefixer_fe(channels=2, sample_rate=44100)
         # print(os.path.join(os.path.expanduser('~'), ".cache/voicefixer/analysis_module/checkpoints/epoch=15_trimed_bn.ckpt"))
-        self.analysis_module_ckpt = os.path.join(
-                    os.path.expanduser("~"),
-                    ".cache/voicefixer/analysis_module/checkpoints/vf.ckpt",
-        )
+        self.analysis_module_ckpt = RESTORER_PATH
         if(not os.path.exists(self.analysis_module_ckpt)):
             raise RuntimeError("Error 0: The checkpoint for analysis module (vf.ckpt) is not found in ~/.cache/voicefixer/analysis_module/checkpoints. \
                                 By default the checkpoint should be download automatically by this program. Something bad may happened.\
@@ -113,6 +112,7 @@ class VoiceFixer(nn.Module):
             self._model.train()  # More effective on seriously demaged speech
         res = []
         seg_length = 44100 * 30
+        
         break_point = seg_length
         while break_point < wav_10k.shape[0] + seg_length:
             segment = wav_10k[break_point - seg_length : break_point]
