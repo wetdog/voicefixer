@@ -1,0 +1,21 @@
+load GCC/10.2.0 (PATH, MANPATH, INFOPATH, LIBRARY_PATH, LD_LIBRARY_PATH, STD
+COMP VARS) 
+load ROCM/5.1.1 (PATH, MANPATH, LD_LIBRARY_PATH, LIBRARY_PATH, C_INCLUDE_PATH)
+Set INTEL compilers as MPI wrappers backend
+load mkl/2018.4 (LD_LIBRARY_PATH)
+load PYTHON/3.7.4 (PATH, MANPATH, LD_LIBRARY_PATH, LIBRARY_PATH,
+PKG_CONFIG_PATH, C_INCLUDE_PATH, CPLUS_INCLUDE_PATH, PYTHONHOME, PYTHONPATH) 
+load ffmpeg/4.2 (PATH, MANPATH, LD_LIBRARY_PATH, C_INCLUDE_PATH, CPLUS_INCLUDE_PATH, PKG_CONFIG_PATH)
+/gpfs/scratch/bsc88/bsc88416/voicefixer-minimal/test/./runner_voicefixer.sh: line 6: /gpfs/scratch/bsc88/bsc88416/voicefixer/voicefix-env/bin/activate: No such file or directory
+Traceback (most recent call last):
+  File "inference.py", line 24, in <module>
+    from voicefixer import VoiceFixer
+  File "/gpfs/scratch/bsc88/bsc88416/voicefixer-minimal/voicefixer/__init__.py", line 13, in <module>
+    from voicefixer.vocoder.base import Vocoder
+  File "/gpfs/scratch/bsc88/bsc88416/voicefixer-minimal/voicefixer/vocoder/base.py", line 2, in <module>
+    from voicefixer.tools.wav import read_wave, save_wave
+  File "/gpfs/scratch/bsc88/bsc88416/voicefixer-minimal/voicefixer/tools/wav.py", line 5, in <module>
+    import soundfile as sf
+ModuleNotFoundError: No module named 'soundfile'
+srun: error: amd26: task 0: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=423184.0

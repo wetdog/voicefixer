@@ -1,0 +1,3 @@
+slurmstepd: error: execve(): /gpfs/scratch/bsc88/bsc88416/voicefixer-minimal/test/./runner_voicefixer.sh: Permission denied
+srun: error: amd26: task 0: Exited with exit code 13
+srun: launch/slurm: _step_signal: Terminating StepId=423178.0
